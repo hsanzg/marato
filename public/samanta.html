@@ -20,7 +20,7 @@
     }
 
     form {
-      max-width: 400px; /* Adjust the maximum width of the form */
+      max-width: 500px; /* Adjust the maximum width of the form */
       width: 100%; /* Make the form take the full width of the container */
       text-align: left; /* Reset text-align for the form fields */
       margin-top: 20px; /* Add some top margin for spacing */
@@ -51,19 +51,37 @@
         <div class="mt-10 space-y-10">
             <fieldset>
             <legend class="text-sm font-semibold leading-6 text-gray-900">Sangrados</legend>
-            <p class="mt-1 text-sm leading-6 text-gray-600">These are delivered via SMS to your mobile phone.</p>
+            <p class="mt-1 text-sm leading-6 text-gray-600">¿Sangras durante más de 7 dias al mes?</p>
             <div class="mt-6 space-y-6">
                 <div class="flex items-center gap-x-3">
-                <input id="push-everything" name="push-notifications" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                <label for="push-everything" class="block text-sm font-medium leading-6 text-gray-900">Everything</label>
+                <input id="si1" name="sangrados1" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <label for="si1" class="block text-sm font-medium leading-6 text-gray-900">Si</label>
                 </div>
                 <div class="flex items-center gap-x-3">
-                <input id="push-email" name="push-notifications" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                <label for="push-email" class="block text-sm font-medium leading-6 text-gray-900">Same as email</label>
+                <input id="no1" name="sangrados1" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <label for="no1" class="block text-sm font-medium leading-6 text-gray-900">No</label>
+                </div>
+            </div>
+            <p class="mt-1 text-sm leading-6 text-gray-600">¿Tienes 3 o más dias de sangrado más abundante durante tu menstruación?</p>
+            <div class="mt-6 space-y-6">
+                <div class="flex items-center gap-x-3">
+                <input id="si2" name="sangrados2" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <label for="si2" class="block text-sm font-medium leading-6 text-gray-900">Si</label>
                 </div>
                 <div class="flex items-center gap-x-3">
-                <input id="push-nothing" name="push-notifications" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                <label for="push-nothing" class="block text-sm font-medium leading-6 text-gray-900">No push notifications</label>
+                <input id="no2" name="sangrados2" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <label for="no2" class="block text-sm font-medium leading-6 text-gray-900">No</label>
+                </div>
+            </div>
+            <p class="mt-1 text-sm leading-6 text-gray-600">¿En alguno de los dias de sangrado más abundante manchas la ropa por las noches; o la mancharias si no usases doble protección o te cambiases por la noche?</p>
+            <div class="mt-6 space-y-6">
+                <div class="flex items-center gap-x-3">
+                <input id="si3" name="sangrados3" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <label for="si3" class="block text-sm font-medium leading-6 text-gray-900">Si</label>
+                </div>
+                <div class="flex items-center gap-x-3">
+                <input id="no3" name="sangrados3" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <label for="no3" class="block text-sm font-medium leading-6 text-gray-900">No</label>
                 </div>
             </div>
             </fieldset>
@@ -71,19 +89,15 @@
         <div class="mt-10 space-y-10">
             <fieldset>
             <legend class="text-sm font-semibold leading-6 text-gray-900">Molestias</legend>
-            <p class="mt-1 text-sm leading-6 text-gray-600">These are delivered via SMS to your mobile phone.</p>
+            <p class="mt-1 text-sm leading-6 text-gray-600">En general, ¿tu regla te resulta especialmente molesta debido a la abundancia?</p>
             <div class="mt-6 space-y-6">
                 <div class="flex items-center gap-x-3">
-                <input id="push-everything" name="push-notifications" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                <label for="push-everything" class="block text-sm font-medium leading-6 text-gray-900">Everything</label>
+                <input id="si4" name="molestias" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <label for="si4" class="block text-sm font-medium leading-6 text-gray-900">Si</label>
                 </div>
                 <div class="flex items-center gap-x-3">
-                <input id="push-email" name="push-notifications" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                <label for="push-email" class="block text-sm font-medium leading-6 text-gray-900">Same as email</label>
-                </div>
-                <div class="flex items-center gap-x-3">
-                <input id="push-nothing" name="push-notifications" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                <label for="push-nothing" class="block text-sm font-medium leading-6 text-gray-900">No push notifications</label>
+                <input id="no4" name="molestias" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <label for="no4" class="block text-sm font-medium leading-6 text-gray-900">No</label>
                 </div>
             </div>
             </fieldset>
@@ -91,31 +105,38 @@
         <div class="mt-10 space-y-10">
             <fieldset>
             <legend class="text-sm font-semibold leading-6 text-gray-900">Temores</legend>
-            <p class="mt-1 text-sm leading-6 text-gray-600">These are delivered via SMS to your mobile phone.</p>
+            <p class="mt-1 text-sm leading-6 text-gray-600">¿Durante los días de sangrado más abundante te preocupa manchar el asiento de tu silla, sofá, etc.?</p>
             <div class="mt-6 space-y-6">
                 <div class="flex items-center gap-x-3">
-                <input id="push-everything" name="push-notifications" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                <label for="push-everything" class="block text-sm font-medium leading-6 text-gray-900">Everything</label>
+                <input id="si5" name="temores1" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <label for="si5" class="block text-sm font-medium leading-6 text-gray-900">Si</label>
                 </div>
                 <div class="flex items-center gap-x-3">
-                <input id="push-email" name="push-notifications" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                <label for="push-email" class="block text-sm font-medium leading-6 text-gray-900">Same as email</label>
-                </div>
-                <div class="flex items-center gap-x-3">
-                <input id="push-nothing" name="push-notifications" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                <label for="push-nothing" class="block text-sm font-medium leading-6 text-gray-900">No push notifications</label>
+                <input id="no5" name="temores1" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <label for="no5" class="block text-sm font-medium leading-6 text-gray-900">No</label>
                 </div>
             </div>
+            <p class="mt-1 text-sm leading-6 text-gray-600">¿En general, en los días de sangrado más abundante, evitas (en la medida de lo posible) algunas actividades, viajes o planes de ocio porque desbes cambiarte frecuentemente el tampón o la compresa?</p>
+            <div class="mt-6 space-y-6">
+                <div class="flex items-center gap-x-3">
+                <input id="si6" name="temores2" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <label for="si6" class="block text-sm font-medium leading-6 text-gray-900">Si</label>
+                </div>
+                <div class="flex items-center gap-x-3">
+                <input id="no6" name="temores2" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                <label for="no6" class="block text-sm font-medium leading-6 text-gray-900">No</label>
+                </div>
             </fieldset>
+            
         </div>
         </div>
-      
+
         <div class="mt-6 flex items-center justify-end gap-x-6">
-          <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
-          <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+          <!--<button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>-->
+          <button type="submit" onmousedown="saveForm()" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
         </div>
       </form>
 </div>
-<!-- Aquí van los scripts -->
+<script src="form.js"> </script>    
 </body>
 </html>
