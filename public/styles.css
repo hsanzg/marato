@@ -46,3 +46,33 @@ body {
   -webkit-appearance: slider-vertical;
   background-color: red;
 }
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#compress {
+  width: 400px;
+  height: 150px;
+  background-color: #93c5e7;
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+}
+
+#ellipse {
+  width: 50px;
+  height: 35px;
+  background-color: #b6473b;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
