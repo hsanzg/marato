@@ -59,7 +59,9 @@ body {
 #compress {
   width: 400px;
   height: 150px;
-  background-color: #93c5e7;
+  background-color: #b6d2e4;
+  border-radius: 50px 50px 50px 50px;
+  border: 2px solid #000;
   position: relative;
   overflow: hidden;
   cursor: grab;
@@ -68,7 +70,7 @@ body {
 #ellipse {
   width: 50px;
   height: 35px;
-  background-color: #b6473b;
+  background: radial-gradient(circle at center, #a40e0e, #f86464);
   border-radius: 50%;
   position: absolute;
   top: 50%;
