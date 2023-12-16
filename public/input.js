@@ -41,4 +41,5 @@ function addEntry() {
   if (!activeTab) throw new Error('no active tab');
   let slider = activeTab === 'pad' ? padSlider : tamponSlider;
   saveNewValue(slider.value, activeTab);
+  redirectToSuccess();
 }

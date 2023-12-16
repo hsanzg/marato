@@ -35,6 +35,10 @@ function redirectToInput() {
   window.location.replace('input.html');
 }
 
+function redirectToSuccess() {
+  window.location.assign('success.html');
+}
+
 function getCurrentCycle() {
   if (!cycles.length) return null; // no cycle.
   const maybeCurrent = cycles[cycles.length - 1];
