@@ -1,80 +1,57 @@
 body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
+}
+
+.tab-container {
+  overflow: hidden;
+}
+
+.tablink {
+  background-color: #f2f2f2;
+  float: left;
+  border: 1px solid #ccc;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
+}
+
+.tablink:hover {
+  background-color: #ddd;
+}
+
+.tabcontent {
+  display: none;
+}
+
+.vertical-slider {
+  width: 100px;
+  height: 150px;
+  margin-top: 10px;
+  writing-mode: bt-lr; /* Bottom-to-top */
+  transform: rotate(270deg);
+}
+
+.horizontal-slider {
+  width: 80%;
+  margin-top: 10px;
 }
 
 .slider-container {
-  height: 300px;
-  margin: 50px auto;
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  appearance: slider-vertical;
-  -webkit-appearance: slider-vertical;
 }
 
-/* Styles for the tabs */
-.nav-tabs {
-  display: flex;
-  gap: 1rem;
+.slider-value {
+  margin: 5px 0;
 }
 
-.nav-tab {
-  padding: 0.5rem 1rem;
-  color: #555;
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s ease-in-out;
+button {
+  margin-top: 10px;
 }
 
-.nav-tab:hover {
-  color: #333;
-}
-
-.active-tab {
-  color: #000;
-  border-bottom: 2px solid #000;
-}
-
-/* Styles for the vertical slider */
-#rangeSlider {
-  width: 10px; /* Adjust the width as needed */
-  height: 200px; /* Adjust the height as needed */
-  margin: 0 auto;
-  appearance: slider-vertical;
-  -webkit-appearance: slider-vertical;
-  background-color: red;
-}
-
-#container {
-  width: 100vw;
-  height: 100vh;
-  background-color: #f0f0f0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#compress {
-  width: 400px;
-  height: 150px;
-  background-color: #b6d2e4;
-  border-radius: 50px 50px 50px 50px;
-  border: 2px solid #000;
-  position: relative;
-  overflow: hidden;
-  cursor: grab;
-}
-
-#ellipse {
-  width: 50px;
-  height: 35px;
-  background: radial-gradient(circle at center, #a40e0e, #f86464);
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
+.total-sum-container {
+  margin-top: 20px;
+  text-align: center;
 }
