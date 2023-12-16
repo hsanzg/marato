@@ -20,7 +20,98 @@
   </div>
 </nav>
 <div class="flex min-h-full flex-col justify-center px-6 py-12">
-  <!-- Aquí va el contenido -->
+  <!-- Calendario -->
+  <!--<div class="rounded-lg bg-white shadow-lg p-4 flex">
+    <div class="px-2 py-3 text-center font-semibold"></div>
+  </div>-->
+
+  <div class="datepicker-picker inline-block rounded-lg bg-white shadow-lg p-4">
+  <div class="datepicker-header">
+    <!--<div class="datepicker-controls flex justify-between mb-2">
+      <button type="button" class="bg-white  rounded-lg text-gray-500  hover:bg-gray-100 :bg-gray-600 hover:text-gray-900 :text-white text-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-gray-200 prev-btn">
+        <svg class="w-4 h-4 rtl:rotate-180 text-gray-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"></path>
+        </svg>
+      </button>
+      <button type="button" class="text-sm rounded-lg text-gray-900  bg-white  font-semibold py-2.5 px-5 hover:bg-gray-100 :bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-200 view-switch">December 2023</button>
+      <button type="button" class="bg-white  rounded-lg text-gray-500  hover:bg-gray-100 :bg-gray-600 hover:text-gray-900 :text-white text-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-gray-200 next-btn">
+        <svg class="w-4 h-4 rtl:rotate-180 text-gray-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"></path>
+        </svg>
+      </button>
+    </div>-->
+  </div>
+  <div class="datepicker-main p-1">
+    <div class="datepicker-view flex flex-col">
+        <div class="grid grid-cols-8">
+          <span class="pl-1 h-5 leading-6 text-sm font-medium text-gray-500 text-center">Jul</span>
+          <span class="col-span-3"></span>
+          <span class="pl-1 h-5 leading-6 text-sm font-medium text-gray-500 text-center">Ago</span>
+          <span class="col-span-3"></span>
+        </div>
+        <div class="grid grid-cols-8 mb-1">
+          <span class="hover:bg-gray-100 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900 font-semibold text-sm text-gray-500">26</span>
+          <span class="hover:bg-gray-100 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900 font-semibold text-sm text-gray-500">26</span>
+          <span class="hover:bg-gray-100 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900 font-semibold text-sm text-gray-500">26</span>
+          <span class="hover:bg-gray-100 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900 font-semibold text-sm text-gray-500">26</span>
+          <span class="hover:bg-gray-100 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900 font-semibold text-sm text-gray-500">26</span>
+          <span class="hover:bg-gray-100 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900 font-semibold text-sm text-gray-500">26</span>
+          <span class="hover:bg-gray-100 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900 font-semibold text-sm text-gray-500">26</span>
+          <span class="hover:bg-gray-100 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900 font-semibold text-sm text-gray-500">26</span>
+          <span class="hover:bg-gray-100 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900 font-semibold text-sm text-gray-500">26</span>
+          <!--<span class="hover:bg-gray-100 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm text-gray-500" data-date="1700953200000">26</span>
+          <span class="hover:bg-gray-100 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900 font-semibold text-sm day prev text-gray-500" data-date="1701039600000">27</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day prev text-gray-500" data-date="1701126000000">28</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day prev text-gray-500" data-date="1701212400000">29</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day prev text-gray-500" data-date="1701298800000">30</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1701385200000">1</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1701471600000">2</span>-->
+          <!--<span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1701558000000">3</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1701644400000">4</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1701730800000">5</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1701817200000">6</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1701903600000">7</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1701990000000">8</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1702076400000">9</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1702162800000">10</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1702249200000">11</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1702335600000">12</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1702422000000">13</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1702508400000">14</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1702594800000">15</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day focused" data-date="1702681200000">16</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1702767600000">17</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1702854000000">18</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1702940400000">19</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1703026800000">20</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1703113200000">21</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1703199600000">22</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1703286000000">23</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1703372400000">24</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1703458800000">25</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1703545200000">26</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1703631600000">27</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1703718000000">28</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1703804400000">29</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1703890800000">30</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day" data-date="1703977200000">31</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day next text-gray-500" data-date="1704063600000">1</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day next text-gray-500" data-date="1704150000000">2</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day next text-gray-500" data-date="1704236400000">3</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day next text-gray-500" data-date="1704322800000">4</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day next text-gray-500" data-date="1704409200000">5</span>
+          <span class="datepicker-cell hover:bg-gray-100 :bg-gray-600 block flex-1 leading-9 border-0 rounded-lg cursor-pointer text-center text-gray-900  font-semibold text-sm day next text-gray-500" data-date="1704495600000">6</span>-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="datepicker-footer">
+    <div class="datepicker-controls flex space-x-2 rtl:space-x-reverse mt-2">
+      <button type="button" class="button today-btn text-white bg-blue-700 !bg-primary-700  !bg-primary-600 hover:bg-blue-800 hover:!bg-primary-800 :bg-blue-700 :!bg-primary-700 focus:ring-4 focus:ring-blue-300 focus:!ring-primary-300 font-medium rounded-lg text-sm px-5 py-2 text-center w-1/2" style="display: none;">Today</button>
+      <button type="button" class="button clear-btn text-gray-900  bg-white  border border-gray-300  hover:bg-gray-100 :bg-gray-600 focus:ring-4 focus:ring-blue-300 focus:!ring-primary-300 font-medium rounded-lg text-sm px-5 py-2 text-center w-1/2" style="display: none;">Clear</button>
+    </div>
+  </div>
+</div>
 
 </div>
 <script src="registry.js"></script>
