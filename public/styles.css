@@ -38,13 +38,11 @@ body {
 }
 
 /* Styles for the vertical slider */
-#rangeSliderTampon {
+#rangeSlider {
   width: 10px; /* Adjust the width as needed */
   height: 200px; /* Adjust the height as needed */
   margin: 0 auto;
   appearance: slider-vertical;
   -webkit-appearance: slider-vertical;
+  background-color: red;
 }
-
-
-
