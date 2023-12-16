@@ -20,7 +20,7 @@ function createNewCycle() {
     });
     saveLocal();
   }
-  redirectToInput();
+  return cycles[0];
 }
 
 function calcPbac(cycle) {
@@ -42,10 +42,15 @@ function getCurrentCycle() {
   return maybeCurrent;
 }
 
+function getCurrentCycleOrCreate() {
+  const current = getCurrentCycle();
+  if (!current) return createNewCycle();
+  return current;
+}
+
 // level is a real number; kind is "pad" or "tampon".
 function saveNewValue(level, kind) {
-  const current = getCurrentCycle();
-  if (!current) throw new Error('No current cycle');
+  let current = getCurrentCycleOrCreate();
   current.entries.push({
     date: Date.now(),
     level,
