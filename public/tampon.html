@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100">
+
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <p class="text-xl font-semibold mb-4">Esta vez he usado...</p>
+    <nav class="nav-tabs">
+      <a href="#" id="tamponTab" class="nav-tab">
+        Tampón
+      </a>
+      <a href="#" id="compresaTab" class="nav-tab active-tab">
+        Compresa
+      </a>
+    </nav>
+  </div>
+</div>
+
+<div class="slider-container mt-8">
+  <input type="range" min="1" max="10" value="5" step="1" id="rangeSliderTampon" class="w-full">
+  <div class="slider-value text-center mt-2" id="selectedValueTampon">5</div>
+</div>
+
+<script src="script.js"></script>
+<script>
+  const tamponTab = document.getElementById('tamponTab');
+  const compresaTab = document.getElementById('compresaTab');
+  const rangeSliderTampon = document.getElementById('rangeSliderTampon');
+  const selectedValueTampon = document.getElementById('selectedValueTampon');
+
+  tamponTab.addEventListener('click', function () {
+    rangeSliderTampon.value = 5;
+    selectedValueTampon.textContent = rangeSliderTampon.value;
+
+    // Toggle active class
+    tamponTab.classList.add('active-tab');
+    compresaTab.classList.remove('active-tab');
+  });
+
+  compresaTab.addEventListener('click', function () {
+    rangeSliderTampon.value = 8;
+    selectedValueTampon.textContent = rangeSliderTampon.value;
+
+    // Toggle active class
+    tamponTab.classList.remove('active-tab');
+    compresaTab.classList.add('active-tab');
+  });
+
+  rangeSliderTampon.addEventListener('input', function () {
+    selectedValueTampon.textContent = rangeSliderTampon.value;
+  });
+</script>
+
+</body>
+</html>
 
