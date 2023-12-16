@@ -1,33 +1,8 @@
-let total_sum = 0;
-let newSliderValue = 1;
-
-function openTab(tabName) {
-  const tabs = document.getElementsByClassName("tabcontent");
-  for (const tab of tabs) {
-    tab.style.display = "none";
-  }
-
-  document.getElementById(tabName).style.display = "block";
-}
-
-function registerValue(sliderId) {
+function updateSliderValue(sliderId) {
   const slider = document.getElementById(sliderId);
+  //const displayElement = document.getElementById(displayId);
   const value = parseFloat(slider.value);
-  total_sum += value;
-
-  // Update total sum display
-  const totalSumElement = document.getElementById("total-sum");
-  totalSumElement.textContent = total_sum.toFixed(1);
-
-  alert(`Value ${value.toFixed(1)} registered. Total Sum: ${total_sum.toFixed(1)}`);
-  saveNewValue(value,"pad");
-}
-
-function updateSliderValue(sliderId, displayId) {
-  const slider = document.getElementById(sliderId);
-  const displayElement = document.getElementById(displayId);
-  const value = parseFloat(slider.value);
-  displayElement.textContent = `Value: ${value.toFixed(1)}`;
+  //displayElement.textContent = `Value: ${value.toFixed(1)}`;
 
   // Additional logic for animation
   if (sliderId === 'slider2') {
@@ -76,7 +51,7 @@ let isDragging = false;
 
 function drag(event) {
   if (isDragging) {
-    const compress = document.getElementById('compress');
+    const compress = document.getElementById('pad');
     const ellipse = document.getElementById('ellipse');
     const rect = ellipse.getBoundingClientRect();
 
@@ -98,8 +73,8 @@ function drag(event) {
     slider.value = newSliderValue.toFixed(1);
 
     // Update the displayed value
-    const displayElement = document.getElementById('slider2-value');
-    displayElement.textContent = `Value: ${newSliderValue.toFixed(1)}`;
+    /*const displayElement = document.getElementById('slider2-value');
+    displayElement.textContent = `Value: ${newSliderValue.toFixed(1)}`;*/
   }
 }
 
@@ -114,20 +89,20 @@ let maxHeight = 450;
 
 
 function startDragT(event) {
-const animatedSquare = document.getElementById('animated-square');
+  const animatedSquare = document.getElementById('animated-square');
 
-isDraggingT = true;
-document.getElementById('animated-square').style.cursor = 'grabbing';
+  isDraggingT = true;
+  document.getElementById('animated-square').style.cursor = 'grabbing';
 
-initialMouseY = event.clientY;
-initialHeight = animatedSquare.clientHeight;
+  initialMouseY = event.clientY;
+  initialHeight = animatedSquare.clientHeight;
 }
 
 function stopDragT() {
-if (isDraggingT) {
-    isDraggingT = false;
-    document.getElementById('animated-square').style.cursor = 'grab';
-}
+  if (isDraggingT) {
+      isDraggingT = false;
+      document.getElementById('animated-square').style.cursor = 'grab';
+  }
 }
 
 function dragT(event) {
@@ -148,8 +123,8 @@ function dragT(event) {
     slider1.value = newSliderValue.toFixed(1);
 
     // Update the displayed value
-    const displayElement = document.getElementById('slider1-value');
-    displayElement.textContent = `Value: ${newSliderValue.toFixed(1)}`;
+    /*const displayElement = document.getElementById('slider1-value');
+    displayElement.textContent = `Value: ${newSliderValue.toFixed(1)}`;*/
   }
 }
 

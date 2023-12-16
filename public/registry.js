@@ -58,3 +58,10 @@ function saveNewValue(level, kind) {
   });
   saveLocal();
 }
+
+function finishCurrentCycle() {
+  const current = getCurrentCycle()
+  if (!current) throw new Error('no current cycle');
+  current.current = false;
+  saveLocal();
+}

@@ -29,3 +29,16 @@ function selectTampon() {
 }
 
 selectPad();
+if (getCurrentCycle() === null) {
+  const finishBtn = document.getElementById('finish-cycle');
+  finishBtn.classList.add('hidden');
+}
+
+const padSlider = document.getElementById('slider2');
+const tamponSlider = document.getElementById('slider1');
+
+function addEntry() {
+  if (!activeTab) throw new Error('no active tab');
+  let slider = activeTab === 'pad' ? padSlider : tamponSlider;
+  saveNewValue(slider.value, activeTab);
+}
