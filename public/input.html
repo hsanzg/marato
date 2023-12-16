@@ -1,12 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Slider Tabs</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PBAC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="font-sans antialiased text-gray-600 bg-gray-100 min-h-full flex flex-col [overflow-anchor:none]" scroll-region="">
+<nav class="bg-emerald-400">
+  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div class="relative flex h-16 items-center justify-between">
+      <div class="flex flex-1 items-center justify-center items-stretch justify-start">
+        <div class="flex flex-shrink-0 items-center text-emerald-50 rounded-md px-3 py-2 text-sm font-bold text-xl tracking-tight">
+          <!--<img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=white" alt="Your Company">-->
+          <a href=".">
+            <img class="h-7 w-auto" src="logo.svg" alt="PBAC">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="flex min-h-full flex-col justify-center px-6 py-12">
+
+
 
 <div class="tab-container">
   <button class="tablink" onclick="openTab('tab1')">Tampon</button>
@@ -42,6 +59,7 @@
   </div>
 </div>
 
-<script src="script.js"></script>
+</div>
 </body>
+<script src="script.js"></script>
 </html>

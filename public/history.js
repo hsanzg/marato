@@ -19,7 +19,7 @@ function createCycleEntry(cycle) {
   pbacName.className = 'color-gray-800 font-medium font-sm';
   pbacName.innerText = 'PBAC';
   const pbacValue = document.createElement('dd');
-  pbacValue.className = 'tracking-tight font-bold text-xl color-black';
+  pbacValue.className = 'tracking-tight font-bold text-xl text-black';
   pbacValue.innerText = Math.round(calcPbac(cycle));
   pbac.appendChild(pbacName);
   pbac.appendChild(pbacValue);
