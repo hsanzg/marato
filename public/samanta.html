@@ -4,11 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PBAC</title>
+  <link rel="manifest" href="manifest.json" />
   <style>
     body {
       text-align: center;
-      margin: 0; /* Remove default body margin */
-      font-family: 'Arial', sans-serif; /* Set your preferred font-family */
     }
 
     .center-container {
@@ -35,7 +34,9 @@
       <div class="flex flex-1 items-center justify-center items-stretch justify-start">
         <div class="flex flex-shrink-0 items-center text-emerald-50 rounded-md px-3 py-2 text-sm font-bold text-xl tracking-tight">
           <!--<img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=white" alt="Your Company">-->
-          <img class="h-7 w-auto" src="logo.svg" alt="PBAC">
+          <a href=".">
+            <img class="h-7 w-auto" src="logo.svg" alt="PBAC">
+          </a>
         </div>
       </div>
     </div>
@@ -45,13 +46,13 @@
     <form>
         <div class="space-y-12">
           <div class="border-b border-gray-900/10 pb-12">
-            <h2 class="text-base font-semibold leading-7 text-gray-900">Que tal ha ido el ciclo?</h2>
-            <p class="mt-1 text-sm leading-6 text-gray-600">Porfavor responde estas preguntas para saber mas sobre tu ciclo.</p>
+            <h2 class="text-base font-semibold leading-7 text-gray-900">¿Qué tal ha fue el ciclo?</h2>
+            <p class="mt-1 text-sm leading-6 text-gray-600">Por favor, responde estas preguntas para saber más sobre tu ciclo.</p>
           </div>
         <div class="mt-10 space-y-10">
             <fieldset>
             <legend class="text-sm font-semibold leading-6 text-gray-900">Sangrados</legend>
-            <p class="mt-1 text-sm leading-6 text-gray-600">¿Sangras durante más de 7 dias al mes?</p>
+            <p class="mt-1 text-sm leading-6 text-gray-600">¿Sangraste durante más de 7 dias al mes?</p>
             <div class="mt-6 space-y-6">
                 <div class="flex items-center gap-x-3">
                 <input id="si1" name="sangrados1" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600">
