@@ -39,6 +39,10 @@ function redirectToSuccess() {
   window.location.assign('success.html');
 }
 
+function redirectToHistory() {
+  window.location.assign('registry.html');
+}
+
 function getCurrentCycle() {
   if (!cycles.length) return null; // no cycle.
   const maybeCurrent = cycles[cycles.length - 1];

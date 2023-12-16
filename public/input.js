@@ -43,3 +43,8 @@ function addEntry() {
   saveNewValue(slider.value, activeTab);
   redirectToSuccess();
 }
+
+function finishCurrentCycleAndRedirect() {
+  finishCurrentCycle();
+  redirectToHistory();
+}
