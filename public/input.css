@@ -74,6 +74,7 @@
 
 #pad-blood-container {
   clip-path: url(images/pad-trace.svg#padClip);
+  -webkit-clip-path: url(images/pad-trace.svg#padClip);
 }
 
 #pad-blood {
