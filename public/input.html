@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
   <title>PBAC</title>
   <link rel="manifest" href="manifest.json" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -45,9 +45,9 @@
       <span id="pad-blood" class="bg-red-800"></span>
     </div>
   </div>
-  <div id="tampon" onmousedown="startDrag(event)" onmouseup="stopDrag()" onmousemove="drag(event)">
-    <input class="appearance-none cursor-pointer w-20 h-100" type="range" id="pad-slider" />
-    <div id="ellipse"></div>
+  <div id="tampon" class="overflow-hidden">
+    <!--<input class="appearance-none cursor-pointer w-20 h-100 hidden" type="range" id="tampon-slider" />-->
+    <span id="tampon-blood" class="bg-red-800 rounded-t-xl"></span>
   </div>
   <!--<div id="pad">
     <input type="range" min="1" max="20" step="0.1" value="1" id="slider2" class="hidden" oninput="updateSliderValue('slider2')"/>

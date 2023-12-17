@@ -6,9 +6,11 @@ const tamponTabButton = document.getElementById('tab-tampon');
 const pad = document.getElementById('pad');
 const padBlood = document.getElementById('pad-blood');
 const tampon = document.getElementById('tampon');
+const tamponBlood = document.getElementById('tampon-blood');
 const smallClots = document.getElementById('small-clots');
 const largeClots = document.getElementById('large-clots');
 let padLevel = 2;
+let tamponLevel = 2;
 
 // Tabs.
 let activeTab = null;
@@ -33,6 +35,7 @@ function selectPad() {
 
 function selectTampon() {
   toggleTabButton('tampon', padTabButton, tamponTabButton, pad, tampon);
+  setInitialTamponBloodLevel();
 }
 
 selectPad();
@@ -57,7 +60,7 @@ function parseClots(input, kindLabel) {
 
 function addEntry() {
   if (!activeTab) throw new Error('no active tab');
-  const level = activeTab === 'pad' ? padLevel : tamponSlider.value;
+  const level = activeTab === 'pad' ? padLevel : tamponLevel;
   const smallClotsCount = parseClots(smallClots, 'pequeños');
   if (smallClotsCount === null) return;
   const largeClotsCount = parseClots(largeClots, 'grandes');
@@ -67,8 +70,7 @@ function addEntry() {
 }
 
 function finishCurrentCycleAndRedirect() {
-  finishCurrentCycle();
-  redirectToHistory();
+  redirectToSamanthaForm();
 }
 
 function extractEventPageCoords(event) {
@@ -116,9 +118,39 @@ function updatePadBlood(event) {
   padBlood.style.width = `${height * widthFactor}px`;
 }
 
+function updatedTamponBlood(event) {
+  const pageCoords = extractEventPageCoords(event);
+  if (pageCoords === null) return; // unsupported API?
+  const [pageX, pageY] = pageCoords;
+
+  // Calculate distance and level for PBAC.
+  const rect = tampon.getBoundingClientRect();
+  if (!rect) throw new Error('cannot get bounding rect');
+  // Find distance from top of tampon.
+  const dist = pageY - rect.y;
+  const maxDist = rect.height;
+
+  // Map `0 <= dist <= maxDist` to `minLevel <= level <= maxLevel`.
+  const minLevel = 1;
+  const maxLevel = 10;
+  const clampedRatio = Math.max(Math.min(dist / maxDist, 1), minLevel / maxLevel);
+  tamponLevel = clampedRatio * (maxLevel - minLevel) + minLevel;
+
+  // Update ellipse radius.
+  const minHeight = (minLevel / maxLevel) * rect.height / 2;
+  //const height = Math.sqrt(dist * dist - deltaX * deltaX) * 2;
+  //const height = Math.min(300, Math.max(20, Math.PI * dist))
+  const height = Math.max(Math.min(rect.height, dist), 10);
+  tamponBlood.style.height = `${height}px`;
+}
+
 function setInitialPadBloodLevel() {
   padBlood.style.width = '57px';
   padBlood.style.height = '79.8px';
+}
+
+function setInitialTamponBloodLevel() {
+  tamponBlood.style.height = `${(tamponLevel / 10) * 300}px`;
 }
 
 let listenersRegistered = false;
@@ -128,6 +160,11 @@ function registerListeners() {
   pad.addEventListener('touchend', updatePadBlood);
   pad.addEventListener('touchmove', updatePadBlood);
   pad.addEventListener('mouseup', updatePadBlood);
+
+  tampon.addEventListener('touchstart', updatedTamponBlood);
+  tampon.addEventListener('touchend', updatedTamponBlood);
+  tampon.addEventListener('touchmove', updatedTamponBlood);
+  tampon.addEventListener('mouseup', updatedTamponBlood);
   listenersRegistered = true;
 }
 

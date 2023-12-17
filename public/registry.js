@@ -39,6 +39,10 @@ function redirectToSuccess() {
   window.location.assign('success.html');
 }
 
+function redirectToSamanthaForm() {
+  window.location.assign('samanta.html');
+}
+
 function redirectToHistory() {
   window.location.assign('registry.html');
 }
@@ -61,11 +65,17 @@ function saveNewValue(level, kind, smallClots, largeClots) {
   let current = getCurrentCycleOrCreate();
   current.entries.push({
     date: Date.now(),
-    level: level.toFixed(1),
+    level,
     kind,
     smallClots,
     largeClots
   });
+  saveLocal();
+}
+
+function saveSamantha(score) {
+  let current = getCurrentCycleOrCreate();
+  current.samanta = score;
   saveLocal();
 }
 
