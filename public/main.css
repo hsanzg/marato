@@ -8,8 +8,10 @@ input[type=number] {
 
 .tooltip {
   visibility: hidden;
+  opacity: 0;
 }
 
 .has-tooltip:hover .tooltip {
   visibility: visible;
+  opacity: 1;
 }
