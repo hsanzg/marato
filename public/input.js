@@ -6,6 +6,8 @@ const tamponTabButton = document.getElementById('tab-tampon');
 const pad = document.getElementById('pad');
 const padBlood = document.getElementById('pad-blood');
 const tampon = document.getElementById('tampon');
+const smallClots = document.getElementById('small-clots');
+const largeClots = document.getElementById('large-clots');
 let padLevel = 2;
 
 // Tabs.
@@ -39,13 +41,18 @@ if (getCurrentCycle() === null) {
   finishBtn.classList.add('hidden');
 }
 
-/*const padSlider = document.getElementById('slider2');
-const tamponSlider = document.getElementById('slider1');*/
+function parseClots(input) {
+  const value = parseInt(input.value, 10);
+  if (isNaN(value)) return 0; // assume no clots if invalid input.
+  return value;
+}
 
 function addEntry() {
   if (!activeTab) throw new Error('no active tab');
   const level = activeTab === 'pad' ? padLevel : tamponSlider.value;
-  saveNewValue(level, activeTab, 0, 0); // todo: small and large clots
+  const smallClotsCount = parseClots(smallClots);
+  const largeClotsCount = parseClots(largeClots);
+  saveNewValue(level, activeTab, smallClotsCount, largeClotsCount);
   redirectToSuccess();
 }
 
