@@ -75,6 +75,13 @@
   background-repeat: no-repeat;
 }
 
+#tampon {
+  background-image: url('images/tampon.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
 #pad-blood-container {
   clip-path: url(#padClip);
   -webkit-clip-path: url(#padClip);
@@ -83,7 +90,4 @@
 #pad-blood {
   margin-left: 12px; /* correct for image misalignment */
   clip-path: ellipse(farthest-side closest-side);
-  transition: height 0.2s ease;
-  transition: width 0.2s ease;
-  background: radial-gradient(circle at center, #a40e0e, #f86464);
 }
