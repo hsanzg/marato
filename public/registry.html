@@ -2,13 +2,13 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
   <title>PBAC</title>
   <link rel="manifest" href="manifest.json" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="main.css" />
 </head>
-<body class="font-sans antialiased text-gray-600 bg-gray-100 h-screen w-screen flex flex-col [overflow-anchor:none] overscroll-none fixed" scroll-region=""><!--overflow-hidden-->
+<body class="font-sans antialiased text-gray-600 bg-gray-100 h-screen w-screen flex flex-col [overflow-anchor:none] overscroll-none" scroll-region=""><!--overflow-hidden-->
 <nav class="bg-emerald-400 shadow-sm">
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
@@ -28,7 +28,7 @@
     </a>
   </div>
 </nav>
-<div class="flex-grow flex flex-col justify-center px-6 py-12">
+<div class="flex-grow flex flex-col justify-center px-6 py-12 overflow-y-shown">
   <header class="select-none">
     <h1 class="tracking-tight leading-wide font-bold text-2xl text-gray-950">Tus últimos ciclos</h1>
   </header>
@@ -63,10 +63,10 @@
 </div>
 <script src="registry.js"></script>
 <script>
-cycles.push({
+/*cycles.push({
   start: new Date(2023, 10, 16),
   entries: [{date: new Date(2023, 10, 16), level: 20, kind: 'pad'}]
-});
+});*/
 </script>
 <script src="calendar.js"></script>
 <script src="history.js"></script>
