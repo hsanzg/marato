@@ -43,11 +43,11 @@ if (getCurrentCycle() === null) {
 
 function parseClots(input, kindLabel) {
   if (input.validity.valueMissing) {
-    alert(`Recuerda rellenar el número de coágulos ${kindLabel}`);
+    alert(`Recuerda rellenar el número de coágulos ${kindLabel}.`);
     return null;
   }
   if (input.validity.badInput) {
-    alert(`Por favor, introduce un número válido de coágulos ${kindLabel}`);
+    alert(`Por favor, introduce un número válido de coágulos ${kindLabel}.`);
     return null;
   }
   const value = parseInt(input.value, 10);
@@ -59,7 +59,9 @@ function addEntry() {
   if (!activeTab) throw new Error('no active tab');
   const level = activeTab === 'pad' ? padLevel : tamponSlider.value;
   const smallClotsCount = parseClots(smallClots, 'pequeños');
+  if (smallClotsCount === null) return;
   const largeClotsCount = parseClots(largeClots, 'grandes');
+  if (largeClotsCount === null) return;
   saveNewValue(level, activeTab, smallClotsCount, largeClotsCount);
   redirectToSuccess();
 }

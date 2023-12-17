@@ -1,4 +1,4 @@
-function updateSliderValue(sliderId) {
+/*function updateSliderValue(sliderId) {
   const slider = document.getElementById(sliderId);
   //const displayElement = document.getElementById(displayId);
   const value = parseFloat(slider.value);
@@ -15,9 +15,9 @@ function updateSliderValue(sliderId) {
     const newHeight = minHeight + value * (90 - minHeight);
     animatedSquare.style.height = `${newHeight}px`;
   }
-}
+}*/
 
-let isDragging = false;
+/*let isDragging = false;
     let initialScale = 1;
     let minScale = 0.5;
 
@@ -75,8 +75,8 @@ function drag(event) {
     // Update the displayed value
     /*const displayElement = document.getElementById('slider2-value');
     displayElement.textContent = `Value: ${newSliderValue.toFixed(1)}`;*/
-  }
-}
+/*  }
+}*/
 
 
 
@@ -131,6 +131,6 @@ function dragT(event) {
 //document.getElementById('animated-square').addEventListener('mousedown', startDrag);
 
 
-document.getElementById('ellipse').addEventListener('mousedown', startDrag);
-document.addEventListener('mouseup', stopDrag);
-document.addEventListener('mousemove', drag);
+//document.getElementById('ellipse').addEventListener('mousedown', startDrag);
+/*document.addEventListener('mouseup', stopDrag);
+document.addEventListener('mousemove', drag);*/

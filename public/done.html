@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PBAC</title>
+  <link rel="manifest" href="manifest.json" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body class="font-sans antialiased text-gray-600 bg-gray-100 h-screen w-screen flex flex-col [overflow-anchor:none] overscroll-none overflow-hidden fixed" scroll-region="">
+<nav class="bg-emerald-400 shadow-sm">
+  <div class="mx-auto max-w-7xl px-2">
+    <div class="relative flex h-16 items-center justify-between">
+      <div class="flex flex-1 items-center justify-center items-stretch justify-start">
+        <div class="flex flex-shrink-0 items-center text-emerald-50 rounded-md px-3 py-2 text-sm font-bold text-xl tracking-tight">
+          <!--<img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=white" alt="Your Company">-->
+          <a href=".">
+            <img class="h-7 w-auto" src="logo.svg" alt="PBAC">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="flex-grow flex flex-col justify-center px-6 py-12">
+  <!--<dotlottie-player src="https://lottie.host/8c3d488c-700c-409c-a6ea-df04a5d9d836/qPVi0YVua2.lottie" background="transparent" class="mx-auto w-20 h-20" speed="1" direction="1" mode="normal" autoplay></dotlottie-player>-->
+  <lottie-player class="mx-auto w-60 h-60" autoplay mode="normal" src="images/congrats.json"></lottie-player>
+  <div class="text-center">El fin del ciclo se ha registrado correctamente.</div>
+</div>
+<!-- Aquí van los scripts -->
+<!--<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>-->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</body>
