@@ -46,9 +46,10 @@
   background-repeat: no-repeat; /* background-size: 93px auto; */
 }
 
-/*#tampon-blood {
+#tampon-blood {
+  background: radial-gradient(circle at center, #a40e0e, #f86464);
   transition: height 0.15s ease-in;
-}*/
+}
 
 #pad-blood-container {
   clip-path: url(#padClip);
