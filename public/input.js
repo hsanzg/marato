@@ -68,7 +68,7 @@ function addEntry() {
 
 function finishCurrentCycleAndRedirect() {
   finishCurrentCycle();
-  redirectToHistory();
+  redirectToSamanthaForm();
 }
 
 function extractEventPageCoords(event) {

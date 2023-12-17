@@ -39,6 +39,10 @@ function redirectToSuccess() {
   window.location.assign('success.html');
 }
 
+function redirectToSamanthaForm() {
+  window.location.assign('samanta.html');
+}
+
 function redirectToHistory() {
   window.location.assign('registry.html');
 }
