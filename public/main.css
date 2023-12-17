@@ -1,0 +1,7 @@
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}

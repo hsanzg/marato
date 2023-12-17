@@ -4,7 +4,11 @@ activeTabIndicator.className = 'h-0.5 absolute inset-x-0 bottom-0 bg-green-300';
 const padTabButton = document.getElementById('tab-pad');
 const tamponTabButton = document.getElementById('tab-tampon');
 const pad = document.getElementById('pad');
+const padBlood = document.getElementById('pad-blood');
 const tampon = document.getElementById('tampon');
+let padLevel = 2;
+
+// Tabs.
 let activeTab = null;
 
 function toggleTabButton(name, oldButton, nextButton, old, next) {
@@ -22,6 +26,7 @@ function toggleTabButton(name, oldButton, nextButton, old, next) {
 
 function selectPad() {
   toggleTabButton('pad', tamponTabButton, padTabButton, tampon, pad);
+  setInitialPadBloodLevel();
 }
 
 function selectTampon() {
@@ -34,13 +39,13 @@ if (getCurrentCycle() === null) {
   finishBtn.classList.add('hidden');
 }
 
-const padSlider = document.getElementById('slider2');
-const tamponSlider = document.getElementById('slider1');
+/*const padSlider = document.getElementById('slider2');
+const tamponSlider = document.getElementById('slider1');*/
 
 function addEntry() {
   if (!activeTab) throw new Error('no active tab');
-  let slider = activeTab === 'pad' ? padSlider : tamponSlider;
-  saveNewValue(slider.value, activeTab);
+  const level = activeTab === 'pad' ? padLevel : tamponSlider.value;
+  saveNewValue(level, activeTab, 0, 0); // todo: small and large clots
   redirectToSuccess();
 }
 
@@ -48,3 +53,65 @@ function finishCurrentCycleAndRedirect() {
   finishCurrentCycle();
   redirectToHistory();
 }
+
+function extractEventPageCoords(event) {
+  if (event instanceof MouseEvent) {
+    return [event.pageX, event.pageY];
+  }
+  // Otherwise assume this is a TouchEvent; Safari uses another class
+  // so we cannot check explicitly with `instanceof`.
+  if (typeof(event.touches) === 'undefined') return null;
+  if (!event.touches.length) return null;
+  const {pageX, pageY} = event.touches[0];
+  return [pageX, pageY];
+}
+
+function updatePadBlood(event) {
+  const pageCoords = extractEventPageCoords(event);
+  if (pageCoords === null) return; // unsupported API?
+  const [pageX, pageY] = pageCoords;
+
+  // Calculate distance and level for PBAC.
+  const rect = pad.getBoundingClientRect();
+  if (!rect) throw new Error('cannot get bounding rect');
+  // Find distance from center of pad.
+  const centerX = rect.x + rect.width / 2;
+  const centerY = rect.y + rect.height / 2;
+  const deltaX = centerX - pageX;
+  const deltaY = centerY - pageY;
+  const dist = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+
+  // Distance from center to a vertex of bounding rect.
+  const maxDist = Math.sqrt(rect.width * rect.width / 4 + rect.height * rect.height / 4);
+
+  // Map `0 <= dist <= maxDist` to `minLevel <= level <= maxLevel`.
+  const minLevel = 1;
+  const maxLevel = 20;
+  const clampedRatio = Math.max(Math.min(dist / maxDist, 1), minLevel / maxLevel);
+  padLevel = clampedRatio * (maxLevel - minLevel) + minLevel;
+
+  // Update ellipse radius.
+  const widthFactor = 0.625;
+  const minHeight = (minLevel / maxLevel) * rect.height / 2;
+  //const height = Math.sqrt(dist * dist - deltaX * deltaX) * 2;
+  const height = Math.min(300, Math.max(20, Math.PI * dist))
+  padBlood.style.height = `${height}px`;
+  padBlood.style.width = `${height * widthFactor}px`;
+}
+
+function setInitialPadBloodLevel() {
+  padBlood.style.width = '57px';
+  padBlood.style.height = '79.8px';
+}
+
+let listenersRegistered = false;
+function registerListeners() {
+  if (listenersRegistered) return;
+  pad.addEventListener('touchstart', updatePadBlood);
+  pad.addEventListener('touchend', updatePadBlood);
+  pad.addEventListener('touchmove', updatePadBlood);
+  pad.addEventListener('mouseup', updatePadBlood);
+  listenersRegistered = true;
+}
+
+registerListeners();

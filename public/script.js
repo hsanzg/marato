@@ -128,7 +128,7 @@ function dragT(event) {
   }
 }
 
-document.getElementById('animated-square').addEventListener('mousedown', startDrag);
+//document.getElementById('animated-square').addEventListener('mousedown', startDrag);
 
 
 document.getElementById('ellipse').addEventListener('mousedown', startDrag);

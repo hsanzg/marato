@@ -6,9 +6,10 @@
   <title>PBAC</title>
   <link rel="manifest" href="manifest.json" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="input.css" />
 </head>
-<body class="font-sans antialiased text-gray-600 bg-gray-100 min-h-full flex flex-col [overflow-anchor:none] overscroll-none overflow-hidden h-full" scroll-region="">
+<body class="font-sans antialiased text-gray-600 bg-gray-100 h-screen flex flex-col [overflow-anchor:none] overscroll-none overflow-hidden" scroll-region="">
 <nav class="bg-emerald-400 shadow-sm">
   <div class="mx-auto max-w-7xl px-2 lg:px-8 relative">
     <div class="relative flex h-16 items-center justify-between">
@@ -28,7 +29,7 @@
     </a>
   </div>
 </nav>
-<div class="flex min-h-full flex-col justify-center px-6 py-12">
+<div class="flex-grow flex flex-col justify-center px-6 py-12">
 <header>
   <h1 class="tracking-tight leading-wide font-bold text-2xl text-gray-950">Registra tu manchado</h1>
 </header>
@@ -38,11 +39,20 @@
   </button>
   <button type="button" class="font-medium text-sm leading-tight text-center px-3 py-2 bg-white rounded-r-md border-l border-gray-200 relative" id="tab-tampon" onclick="selectTampon();">Tampón</button>
 </nav>
-<div>
+<div class="mt-4 mx-auto">
   <div id="pad">
+    <div id="pad-blood-container" class="h-full w-full flex items-center justify-center">
+      <span id="pad-blood" class="bg-red-800"></span>
+    </div>
+  </div>
+  <div id="tampon" onmousedown="startDrag(event)" onmouseup="stopDrag()" onmousemove="drag(event)">
+    <input class="appearance-none cursor-pointer w-20 h-100" type="range" id="pad-slider" />
+    <div id="ellipse"></div>
+  </div>
+  <!--<div id="pad">
     <input type="range" min="1" max="20" step="0.1" value="1" id="slider2" class="hidden" oninput="updateSliderValue('slider2')"/>
     <div class="animation-container">
-      <div id="container" onmousedown="startDrag(event)" onmouseup="stopDrag()" onmousemove="drag(event)">
+      <div id="container" >
         <div id="compress" class="horizontal-slider" style="cursor: grab;">
           <div id="ellipse"></div>
         </div>
@@ -52,13 +62,36 @@
   <div id="tampon" class="hidden mx-auto mt-6" onmousedown="startDragT(event)" onmouseup="stopDragT()" onmousemove="dragT(event)">
     <input type="range" min="1" max="10" step="0.1" value="1" id="slider1" class="hidden" oninput="updateSliderValue('slider1')"/>
     <div id="animated-square"></div>
-  </div>
-
-
-
+  </div>-->
 </div>
-
-<div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+<!-- Clots -->
+<div class="mt-2">
+  <label id="clot-label" class="block text-sm font-medium leading-6 text-gray-900">Coágulos</label>
+  <div class="mt-2">
+    <button type="button" class="relative w-full cursor-default rounded-md bg-white py-1.5 px-3 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 grid grid-cols-2 max-h-full" aria-labelledby="clot-label">
+      <span class="relative mr-1.5">
+        <input class="appearance-none focus:outline-none max-w-full" type="number" placeholder="Pequeños"/>
+        <span class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center">
+          <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z" clip-rule="evenodd" />
+          </svg>
+        </span>
+      </span>
+      <span class="relative border-l border-gray-300 pl-2">
+        <input class="appearance-none focus:outline-none max-w-full" type="number" placeholder="Grandes"/>
+        <!--<span class="flex items-center">
+          <span class="ml-3 block truncate">Tom Cook</span>
+        </span>-->
+        <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center">
+          <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z" clip-rule="evenodd" />
+          </svg>
+        </span>
+      </span>
+    </button>
+  </div>
+</div>
+<div class="mt-auto pt-10 sm:mx-auto sm:w-full sm:max-w-sm">
   <button type="button" class="flex w-full justify-center rounded-md bg-emerald-400 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow hover:bg-emerald-500" onclick="addEntry();">Guardar</button>
   <button type="button" class="mt-3 flex w-full justify-center rounded-md bg-white px-3 py-1.5 text-sm font-semibold leading-6 shadow hover:bg-gray-100 text-gray-950" id="finish-cycle" onclick="finishCurrentCycle();">Mi ciclo ha terminado</a>
 </div>

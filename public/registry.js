@@ -16,7 +16,7 @@ function createNewCycle() {
     cycles.push({
       start: Date.now(),
       current: true,
-      entries: [] // {date, level, kind}; ordered by date.
+      entries: [] // {date, level, kind, smallClots, largeClots}; ordered by date.
     });
     saveLocal();
   }
@@ -57,12 +57,14 @@ function getCurrentCycleOrCreate() {
 }
 
 // level is a real number; kind is "pad" or "tampon".
-function saveNewValue(level, kind) {
+function saveNewValue(level, kind, smallClots, largeClots) {
   let current = getCurrentCycleOrCreate();
   current.entries.push({
     date: Date.now(),
     level,
-    kind
+    kind,
+    smallClots,
+    largeClots
   });
   saveLocal();
 }
