@@ -41,17 +41,25 @@ if (getCurrentCycle() === null) {
   finishBtn.classList.add('hidden');
 }
 
-function parseClots(input) {
+function parseClots(input, kindLabel) {
+  if (input.validity.valueMissing) {
+    alert(`Recuerda rellenar el número de coágulos ${kindLabel}`);
+    return null;
+  }
+  if (input.validity.badInput) {
+    alert(`Por favor, introduce un número válido de coágulos ${kindLabel}`);
+    return null;
+  }
   const value = parseInt(input.value, 10);
-  if (isNaN(value)) return 0; // assume no clots if invalid input.
+  if (isNaN(value)) throw new Error('passed validation but failed parse');
   return value;
 }
 
 function addEntry() {
   if (!activeTab) throw new Error('no active tab');
   const level = activeTab === 'pad' ? padLevel : tamponSlider.value;
-  const smallClotsCount = parseClots(smallClots);
-  const largeClotsCount = parseClots(largeClots);
+  const smallClotsCount = parseClots(smallClots, 'pequeños');
+  const largeClotsCount = parseClots(largeClots, 'grandes');
   saveNewValue(level, activeTab, smallClotsCount, largeClotsCount);
   redirectToSuccess();
 }

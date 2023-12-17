@@ -5,3 +5,11 @@ html {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+.tooltip {
+  visibility: hidden;
+}
+
+.has-tooltip:hover .tooltip {
+  visibility: visible;
+}
