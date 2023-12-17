@@ -65,7 +65,7 @@ function saveNewValue(level, kind, smallClots, largeClots) {
   let current = getCurrentCycleOrCreate();
   current.entries.push({
     date: Date.now(),
-    level: level.toFixed(1),
+    level,
     kind,
     smallClots,
     largeClots
