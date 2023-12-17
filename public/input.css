@@ -78,7 +78,8 @@
 #tampon {
   background-image: url(images/tampon.png);
   background-size: cover;
-  background-repeat: no-repeat;
+  width: 100px;
+  background-repeat: no-repeat; /* background-size: 93px auto; */
 
 }
 
@@ -90,5 +91,4 @@
 #pad-blood {
   margin-left: 12px; /* correct for image misalignment */
   clip-path: ellipse(farthest-side closest-side);
-  background: radial-gradient(circle at center, #a40e0e, #f86464);
 }
