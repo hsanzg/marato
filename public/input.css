@@ -76,7 +76,7 @@
 }
 
 #tampon {
-  background-image: url('images/tampon.png');
+  background-image: url(images/tampon.png);
   background-size: cover;
   background-repeat: no-repeat;
 
