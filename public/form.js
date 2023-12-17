@@ -16,7 +16,7 @@ function saveForm() {
       weightedSum += weights[index];
     }
   });
-  //TODO: TRACT THIS VALUE
-  alert(weightedSum); //remove this and store the value
-  //add action to go to the main page again maybe¿?
+  saveSamantha(weightedSum);
+  finishCurrentCycle();
+  redirectToHistory();
 }

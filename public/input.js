@@ -67,7 +67,6 @@ function addEntry() {
 }
 
 function finishCurrentCycleAndRedirect() {
-  finishCurrentCycle();
   redirectToSamanthaForm();
 }
 

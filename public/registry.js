@@ -73,6 +73,12 @@ function saveNewValue(level, kind, smallClots, largeClots) {
   saveLocal();
 }
 
+function saveSamantha(score) {
+  let current = getCurrentCycleOrCreate();
+  current.samanta = score;
+  saveLocal();
+}
+
 function finishCurrentCycle() {
   const current = getCurrentCycle()
   if (!current) throw new Error('no current cycle');
