@@ -25,7 +25,7 @@ function createNewCycle() {
 
 function calcPbac(cycle) {
   let total = 0;
-  for (const entry in cycle.entries) {
+  for (const entry of cycle.entries) {
     total += entry.level;
   }
   return total;
